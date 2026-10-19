@@ -179,7 +179,7 @@ JsonObject Build()
 {
     var status = loading ? "読んでいます"
         : errors.Count > 0 ? $"読めなかった: {string.Join("、", errors)}"
-        : loadedAt is { } at ? $"{at:H:mm} に読んだ（{string.Join("・", sources.Select(s => s.Name))}）" : "";
+        : loadedAt is { } at && sources.Count > 0 ? $"{at:H:mm} に読んだ（{string.Join("・", sources.Select(s => s.Name))}）" : "";
     var head = Ui.Row(Ui.Text(status, "small", "dim").Grow().Align("center"), Ui.Button("refresh", icon: "refresh").Align("center"));
     var list = Ui.Column().Gap(10);
     var rows = (JsonArray)list["children"]!;
