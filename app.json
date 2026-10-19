@@ -1,0 +1,13 @@
+{
+  "id": "calendar",
+  "name": "カレンダー",
+  "icon": "calendar_month",
+  "description": "iCal の URL（Google カレンダーの非公開 URL など）から、今日から 14 日分の予定を並べる。始まる 10 分前に知らせる",
+  "version": "0.1.0",
+  "kind": "process",
+  "command": "bin/visor-calendar.exe",
+  "build": ["dotnet", "publish", "-c", "Release", "-o", "bin", "--nologo"],
+  "autostart": true,
+  "width": 0.45,
+  "height": 1160
+}
